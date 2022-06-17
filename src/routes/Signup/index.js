@@ -21,6 +21,7 @@ export default function Signup() {
       })
       .catch(function (error) {
         setResults(null);
+        console.log(error);
         setError(error);
       });
   });
@@ -84,7 +85,10 @@ export default function Signup() {
               />
               {error ? (
                 <div>
-                  <span style={{ color: "red" }}>Check your inputs!</span>
+                  <span style={{ color: "red" }}>
+                    Check your inputs! Password must be 8 characters long and
+                    contain uppercase and lowercase letters and numbers.
+                  </span>
                 </div>
               ) : null}
             </div>
